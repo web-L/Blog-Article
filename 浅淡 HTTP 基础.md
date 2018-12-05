@@ -189,13 +189,8 @@
     * `Server` 服务器版本信息
 
     * 常见 `HTTP` 状态码
-        状态码|响应类别	|原因短语
-        ---|:--:|---:
-        1XX|信息性状态码（Informational）|服务器正在处理请求
-        2XX|成功状态码（Success）|请求已正常处理完毕
-        3XX|重定向状态码（Redirection）|需要进行额外操作以完成请求
-        4XX|客户端错误状态码（Client Error）|客户端原因导致服务器无法处理请求
-        5XX|内服务器错误状态码（Server Error）|服务器原因导致处理请求出错
+    * 
+        ![HTTP Code](./images/http-code.png "HTTP Code")
 
         参考链接 [常见的HTTP状态码说明](https://cloud.tencent.com/developer/news/7987)
 

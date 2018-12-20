@@ -90,7 +90,7 @@
 
 ## Babel 使用注意
 
-babel 默认只转换语法,而不转换新的API，如需使用新的API,还需要使用对应的转换插件或者 polyfill.js
+babel 默认只转换语法,而不转换新的API，如需使用新的API,还需要使用对应的转换插件或者 [polyfill.js](https://cdn.bootcss.com/babel-polyfill/7.0.0-rc.4/polyfill.min.js)
 
     例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式，
     

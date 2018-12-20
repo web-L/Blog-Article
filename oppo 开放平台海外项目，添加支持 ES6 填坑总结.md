@@ -20,7 +20,7 @@
     通过 `gulp localbuild` 执行，`runSequence` 这个方法用来 **串行的执行拆分的任务** 。
 3. `browserify` 任务是将 static/modules 下 Js 输出到 src/dist/script/src 文件内
 4. `destJs`  任务将src/dist/script/src 文件内的 Js 重命名，然后输出到 src/dist/script 目录
-5. `useref` 找到 page 下面所有 html 内的 样式和Javascrip 通过下面 语法进行 查找 页面上引用 `js css` 合并，包含 `html css js`输出到 后端的 `views` 目录下。
+5. `useref` 找到 page 下面所有 html 内的 样式和Javascrip 通过下面： 语法查找 页面上引用的 `js css` 进行代码合并，包含 `html css js` 文件输出到 后端的 `views` 目录下。
 
     ```
     <!--build:js /static/scripts/theme_list.ES6.js -->
@@ -30,7 +30,7 @@
 6. `['copyjquery', 'miniJsLocal', 'miniCssLocal']`  第一个是将页面上引用的 插件复制到 `web/static/scripts` 后端目录下，第二个压缩打包 JS 加MD5 等（当然在开发环境没有这些处理），第三个压缩打包 CSS 加MD5，后面的任务也是一样的操作只是处理文件不一样，最终都会输出到 `web/static` 后端目录（这个目录才是存放静态资源的目录 也就是页面访问的需要加载的 `css js img` 等等）。
 
 ## 三、Babel 搭建编译 ES6
-1. 通过上面了解这个项目的构建流程，等 `Js` 合并完之后再编译后到压缩，所以我们在 `destJs` 这个任务添加 `ES6` 的编。
+1. 通过上面了解这个项目的构建流程，等 `Js` 合并完之后再编译后到压缩，所以我们在 `destJs` 这个任务添加 `ES6` 的编译。
 2. 安装对应依赖模块（推荐使用淘宝境像 [cnpm](http://npm.taobao.org/) ）
 
     ```
@@ -56,7 +56,7 @@
             .pipe(gulp.dest(distRoot + 'views'));
     });
     ```
-5. 然后在命令行执行 `gulp localbuild` 等好久 。。。。。。。。然后会出现一堆报错 :joy: ，原因是 `Babel` 编译是按照 `Javascrip` 严格模式来编译的，旧的代码里非常多有很多不是按照 严格模式 来书写的，不了解可以看一下 [JS-严格模式和非严格模式的区别](https://www.jianshu.com/p/39e295f4526d)，所有怎么办呢？ 思考中。。。。。。。。
+5. 然后在命令行执行 `gulp localbuild` 等好久 。。。。。。。。然后会出现一堆报错 :joy: ，原因是 `Babel` 编译是按照 `Javascrip` 严格模式来编译的，旧的代码里非常多有很多不是按照 严格模式 来书写的，不了解可以看一下 [JS-严格模式和非严格模式的区别](https://www.jianshu.com/p/39e295f4526d)，所以怎么办呢？ 思考中。。。。。。。。
 6. 旧的代码没有 `ES6` 语法所以我过滤掉就好了呀，那需要用 `ES6` 昨整？  先安装一个模块：
    
    ```

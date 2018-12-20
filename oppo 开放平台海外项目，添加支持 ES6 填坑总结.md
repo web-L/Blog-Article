@@ -92,4 +92,4 @@
 
 babel 默认只转换语法,而不转换新的API，如需使用新的API,还需要使用对应的转换插件或者 polyfill.js
 
-    例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式，\n 但是却不能转换Map，Set，Promise等新的全局对象，这时候就需要使用polyfill去模拟这些新特性
+    例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式，<br /> 但是却不能转换Map，Set，Promise等新的全局对象，这时候就需要使用polyfill去模拟这些新特性
